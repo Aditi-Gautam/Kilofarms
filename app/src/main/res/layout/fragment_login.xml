@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    tools:context=".fragments.LoginFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height= "300dp"
             android:layout_marginVertical="10dp"
-            android:src="@drawable/kilofarms"/>
+            android:src="@drawable/kilofarms_removedbg"/>
 
         <EditText
             android:id="@+id/et_phoneNumber"
@@ -32,7 +32,7 @@
             android:layout_height="50dp"
             android:layout_marginHorizontal="20dp"
             android:layout_marginVertical="5dp"
-            android:hint="Password"/>
+            android:hint="Password" />
 
 
         <Button

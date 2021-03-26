@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.kilofarmsandroidapp.LoginFragment"
+        android:name="com.example.kilofarmsandroidapp.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/productFragment"
-        android:name="com.example.kilofarmsandroidapp.ProductFragment"
+        android:name="com.example.kilofarmsandroidapp.fragments.ProductFragment"
         android:label="fragment_product"
         tools:layout="@layout/fragment_product" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/productListingFragment"
-        android:name="com.example.kilofarmsandroidapp.ProductListingFragment"
+        android:name="com.example.kilofarmsandroidapp.fragments.ProductListingFragment"
         android:label="fragment_product_listing"
         tools:layout="@layout/fragment_product_listing" />
 </navigation>
