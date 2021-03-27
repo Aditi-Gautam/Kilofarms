@@ -1,9 +1,14 @@
 package com.example.kilofarmsandroidapp.adapters
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.TextView
+import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kilofarmsandroidapp.R
 import com.example.kilofarmsandroidapp.models.ProductListingDataModel
 
 class ProductListAdapter : RecyclerView.Adapter<ProductListAdapter.ProductViewHolder>() {
@@ -15,28 +20,44 @@ class ProductListAdapter : RecyclerView.Adapter<ProductListAdapter.ProductViewHo
             oldItem: ProductListingDataModel,
             newItem: ProductListingDataModel
         ): Boolean {
-            TODO("Not yet implemented")
+            oldItem.productId == newItem.productId
         }
 
         override fun areContentsTheSame(
             oldItem: ProductListingDataModel,
             newItem: ProductListingDataModel
         ): Boolean {
-            TODO("Not yet implemented")
+            return oldItem == newItem
         }
 
     }
 
+    val differ = AsyncListDiffer(this, differCallback)
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        TODO("Not yet implemented")
+        return ProductViewHolder(
+                LayoutInflater.from(parent.context).inflate(
+                        R.layout.product_list_row_layout,
+                        parent,
+                        false
+                )
+        )
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val product = differ.currentList[position]
+        holder.itemView.apply {
+
+            tv_skuName.text = product.skuName
+            tv_skuCategory.text = product.skuCategory
+            tv_skuUnit.text = product.skuUnit
+            tv_userId.text = product.user_id
+
+        }
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return differ.currentList.size
     }
 
 }
