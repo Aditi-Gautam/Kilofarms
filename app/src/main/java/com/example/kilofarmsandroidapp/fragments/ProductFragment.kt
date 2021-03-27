@@ -15,7 +15,7 @@ import com.example.kilofarmsandroidapp.R.id.et_productName
 
 class ProductFragment : Fragment(), View.OnClickListener {
 
-    var navController: NavController? = null
+//    var navController: NavController? = null
     lateinit var category: Spinner
     lateinit var mContext: Context
     lateinit var selectedCategory: String
@@ -38,7 +38,7 @@ class ProductFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = Navigation.findNavController(view)
+//        navController = Navigation.findNavController(view)
         view.findViewById<Button>(R.id.btn_submit).setOnClickListener(this)
 
         productName = view.findViewById<EditText>(et_productName).text.toString()
@@ -69,7 +69,6 @@ class ProductFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
 
-        navController!!.navigate(R.id.action_productFragment_to_productListingFragment)
 
     }
 

@@ -44,46 +44,46 @@ class LoginFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-       if(!validate()) {
-           Toast.makeText(mContext, "Incorrect Credentials", Toast.LENGTH_SHORT).show()
-       }
-
-       else {
-            navController!!.navigate(R.id.action_loginFragment_to_productFragment)
-       }
+//       if(!validate()) {
+//           Toast.makeText(mContext, "Incorrect Credentials", Toast.LENGTH_SHORT).show()
+//       }
+//
+//       else {
+            navController!!.navigate(R.id.action_loginFragment_to_dashboardFragment2)
+//       }
 
     }
 
-    fun validate(): Boolean {
-        var valid = true
-        var num = true
-
-        val _phoneNumber = phoneNumber!!.text.toString()
-        val  _password = password!!.text.toString()
-
-        for (i in 0..9)
-        {
-            if(!Character.isDigit(_phoneNumber.get(i))) {
-                num =  false;
-                break;
-            }
-        }
-        if(_phoneNumber.isEmpty() || _phoneNumber.length !=10 || num) {
-            phoneNumber!!.error = "Enter a valid number"
-            valid = false
-        }
-        else {
-            phoneNumber!!.error = null
-        }
-        if(_password.isEmpty() || _password.length < 4) {
-            phoneNumber!!.error = "Password should be longer than 3 digits"
-            valid = false
-        }
-        else {
-            password!!.error = null
-        }
-
-        return valid
-    }
+//    fun validate(): Boolean {
+//        var valid = true
+//        var num = true
+//
+//        val _phoneNumber = phoneNumber!!.text.toString()
+//        val  _password = password!!.text.toString()
+//
+//        for (i in 0..9)
+//        {
+//            if(!Character.isDigit(_phoneNumber.get(i))) {
+//                num =  false;
+//                break;
+//            }
+//        }
+//        if(_phoneNumber.isEmpty() || _phoneNumber.length !=10 || num) {
+//            phoneNumber!!.error = "Enter a valid number"
+//            valid = false
+//        }
+//        else {
+//            phoneNumber!!.error = null
+//        }
+//        if(_password.isEmpty() || _password.length < 4) {
+//            phoneNumber!!.error = "Password should be longer than 3 digits"
+//            valid = false
+//        }
+//        else {
+//            password!!.error = null
+//        }
+//
+//        return valid
+//    }
 
 }

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,12 +10,12 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_productFragment"
+            android:id="@+id/action_loginFragment_to_dashboardFragment2"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
-            app:destination="@id/productFragment"
+            app:destination="@id/dashboardFragment2"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="false"/>
     </fragment>
@@ -24,20 +23,36 @@
         android:id="@+id/productFragment"
         android:name="com.example.kilofarmsandroidapp.fragments.ProductFragment"
         android:label="fragment_product"
-        tools:layout="@layout/fragment_product" >
-        <action
-            android:id="@+id/action_productFragment_to_productListingFragment"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:destination="@id/productListingFragment"
-            app:popUpTo="@id/productFragment"
-            app:popUpToInclusive="false"/>
-    </fragment>
+        tools:layout="@layout/fragment_product" />
+
     <fragment
         android:id="@+id/productListingFragment"
         android:name="com.example.kilofarmsandroidapp.fragments.ProductListingFragment"
         android:label="fragment_product_listing"
         tools:layout="@layout/fragment_product_listing" />
+
+    <fragment
+        android:id="@+id/dashboardFragment2"
+        android:name="com.example.kilofarmsandroidapp.fragments.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment2_to_productFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:destination="@id/productFragment"
+            app:popUpTo="@id/dashboardFragment2"
+            app:popUpToInclusive="false"/>
+        <action
+            android:id="@+id/action_dashboardFragment2_to_productListingFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:destination="@id/productListingFragment"
+            app:popUpTo="@id/dashboardFragment2"
+            app:popUpToInclusive="false"/>
+    </fragment>
 </navigation>
