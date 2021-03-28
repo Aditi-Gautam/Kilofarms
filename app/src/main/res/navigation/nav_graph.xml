@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.kilofarmsandroidapp.fragments.LoginFragment"
+        android:name="com.example.kilofarmsandroidapp.ui.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -21,19 +21,19 @@
     </fragment>
     <fragment
         android:id="@+id/productFragment"
-        android:name="com.example.kilofarmsandroidapp.fragments.ProductFragment"
+        android:name="com.example.kilofarmsandroidapp.ui.fragments.ProductFragment"
         android:label="fragment_product"
         tools:layout="@layout/fragment_product" />
 
     <fragment
         android:id="@+id/productListingFragment"
-        android:name="com.example.kilofarmsandroidapp.fragments.ProductListingFragment"
+        android:name="com.example.kilofarmsandroidapp.ui.fragments.ProductListingFragment"
         android:label="fragment_product_listing"
         tools:layout="@layout/fragment_product_listing" />
 
     <fragment
         android:id="@+id/dashboardFragment2"
-        android:name="com.example.kilofarmsandroidapp.fragments.DashboardFragment"
+        android:name="com.example.kilofarmsandroidapp.ui.fragments.DashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" >
         <action

@@ -1,4 +1,4 @@
-package com.example.kilofarmsandroidapp.fragments
+package com.example.kilofarmsandroidapp.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,10 +9,13 @@ import android.widget.Button
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.kilofarmsandroidapp.R
+import com.example.kilofarmsandroidapp.ui.MainActivity
+import com.example.kilofarmsandroidapp.ui.ProductViewModel
 
 class DashboardFragment : Fragment(), View.OnClickListener {
 
     var navController: NavController? = null
+    lateinit var viewModel: ProductViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +27,8 @@ class DashboardFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel = (activity as MainActivity).viewModel
 
         navController = Navigation.findNavController(view)
         view.findViewById<Button>(R.id.btn_createProduct).setOnClickListener(this)

@@ -20,7 +20,7 @@ class ProductListAdapter : RecyclerView.Adapter<ProductListAdapter.ProductViewHo
             oldItem: ProductListingDataModel,
             newItem: ProductListingDataModel
         ): Boolean {
-            oldItem.productId == newItem.productId
+            return oldItem.productId == newItem.productId
         }
 
         override fun areContentsTheSame(
@@ -48,10 +48,10 @@ class ProductListAdapter : RecyclerView.Adapter<ProductListAdapter.ProductViewHo
         val product = differ.currentList[position]
         holder.itemView.apply {
 
-            tv_skuName.text = product.skuName
-            tv_skuCategory.text = product.skuCategory
-            tv_skuUnit.text = product.skuUnit
-            tv_userId.text = product.user_id
+            this.findViewById<TextView>(R.id.tv_skuName).text = product.skuName
+            this.findViewById<TextView>(R.id.tv_skuCategory).text = product.skuCategory
+            this.findViewById<TextView>(R.id.tv_skuUnit).text = product.skuUnit
+            this.findViewById<TextView>(R.id.tv_userId).text = product.user_id.toString()
 
         }
     }

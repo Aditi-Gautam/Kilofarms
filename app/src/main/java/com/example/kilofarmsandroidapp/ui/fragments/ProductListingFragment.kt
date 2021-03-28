@@ -1,4 +1,4 @@
-package com.example.kilofarmsandroidapp.fragments
+package com.example.kilofarmsandroidapp.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kilofarmsandroidapp.R
+import com.example.kilofarmsandroidapp.ui.MainActivity
+import com.example.kilofarmsandroidapp.ui.ProductViewModel
 
 class ProductListingFragment : Fragment() {
 
     lateinit var rv_productlist: RecyclerView
+    lateinit var viewModel: ProductViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +25,9 @@ class ProductListingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel = (activity as MainActivity).viewModel
+
         rv_productlist = view.findViewById(R.id.rv_productList) as RecyclerView
         //rv_productlist.setlayoutManager(new Linear))
     }

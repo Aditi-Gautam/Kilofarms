@@ -1,4 +1,4 @@
-package com.example.kilofarmsandroidapp.fragments
+package com.example.kilofarmsandroidapp.ui.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -8,10 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.kilofarmsandroidapp.R
+import com.example.kilofarmsandroidapp.ui.MainActivity
+import com.example.kilofarmsandroidapp.ui.ProductViewModel
 
 class LoginFragment : Fragment(), View.OnClickListener {
 
@@ -19,6 +20,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
     var phoneNumber: EditText? = null
     var password: EditText? = null
     lateinit var mContext: Context
+    lateinit var viewModel: ProductViewModel
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -38,6 +40,8 @@ class LoginFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         view.findViewById<Button>(R.id.btn_login).setOnClickListener(this)
+
+        viewModel = (activity as MainActivity).viewModel
 
         phoneNumber = view.findViewById<EditText>(R.id.et_phoneNumber) as EditText
         password = view.findViewById<EditText>(R.id.et_password) as EditText

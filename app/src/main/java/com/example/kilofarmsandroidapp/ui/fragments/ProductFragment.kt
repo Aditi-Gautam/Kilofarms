@@ -1,4 +1,4 @@
-package com.example.kilofarmsandroidapp.fragments
+package com.example.kilofarmsandroidapp.ui.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import com.example.kilofarmsandroidapp.R
 import com.example.kilofarmsandroidapp.R.id.et_productName
+import com.example.kilofarmsandroidapp.ui.MainActivity
+import com.example.kilofarmsandroidapp.ui.ProductViewModel
 
 
 class ProductFragment : Fragment(), View.OnClickListener {
@@ -20,6 +20,7 @@ class ProductFragment : Fragment(), View.OnClickListener {
     lateinit var mContext: Context
     lateinit var selectedCategory: String
     lateinit var productName: String
+    lateinit var viewModel: ProductViewModel
 
 
     override fun onAttach(context: Context) {
@@ -43,6 +44,8 @@ class ProductFragment : Fragment(), View.OnClickListener {
 
         productName = view.findViewById<EditText>(et_productName).text.toString()
         category = view.findViewById(R.id.sp_category) as Spinner
+
+        viewModel = (activity as MainActivity).viewModel
 
         val options = arrayOf("Fruits", "Vegetables", "Others")
         val spinnerAdapter: ArrayAdapter<String> = ArrayAdapter<String>(
